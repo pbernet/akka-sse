@@ -7,14 +7,6 @@ import static de.heikoseeberger.akkasse.OptionConverters.*;
 
 public abstract class ServerSentEvent {
 
-    public abstract Optional<String> getData();
-
-    public abstract Optional<String> getType();
-
-    public abstract Optional<String> getId();
-
-    public abstract OptionalInt getRetry();
-
     public static ServerSentEvent create(String data) {
         return de.heikoseeberger.akkasse.ServerSentEvent.apply(data);
     }
@@ -42,4 +34,12 @@ public abstract class ServerSentEvent {
                 toOption(retry)
         );
     }
+
+    public abstract Optional<String> getData();
+
+    public abstract Optional<String> getType();
+
+    public abstract Optional<String> getId();
+
+    public abstract OptionalInt getRetry();
 }
